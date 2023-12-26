@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BangunruangController;
+use App\Http\Controllers\DatarController;
+use App\Http\Controllers\RuangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Bikin routing untuk Bangun Datar pake controller
+Route::get('/ruang', [RuangController::class, 'index']);
