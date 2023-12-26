@@ -1,0 +1,84 @@
+#main-one{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15vh;
+}
+
+.kotak1{
+    width: 400px;
+    height: 225px;
+    padding: 87px;
+    background-color: #e3ac3e;
+    border-radius: 10px;
+}
+.kotak2{
+    width: 400px;
+    height: 225px;
+    padding: 87px;
+    border-radius: 10px;
+    margin-top:38px;
+}
+
+.sidebar{
+    background-color: #FFFF;
+    padding: 45px;
+    border-bottom-left-radius: 25px;
+    border-left: #0d6efd solid 2px;
+    border-bottom: #0d6efd solid 2px;
+}
+
+.our-team{
+    padding-top: 12vh;
+    padding-bottom: 25vh;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-center{
+    padding-top: 18vh;
+}
+
+body{
+    background-color: #F4F9FD;
+}
+
+.contact{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fatih:hover{
+    border: 5px solid #fd910d;
+    transition: 0.1s;
+}
+
+.jay:hover{
+    border: 5px solid #fd0d0d;
+    transition: 0.1s;
+}
+
+.nisa:hover{
+    border: 5px solid #fd0da9;
+    transition: 0.1s;
+}
+
+.hudan:hover{
+    border: 5px solid #f5fd0d;
+    transition: 0.1s;
+}
+
+.tasya:hover{
+    border: 5px solid #b90dfd;
+    transition: 0.1s;
+}
+
+.abrar:hover{
+    border: 5px solid #0dfd0d;
+    transition: 0.1s;
+}
