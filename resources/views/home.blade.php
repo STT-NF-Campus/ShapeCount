@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ShapeCount - Selamat Datang</title>
+    <!-- Icon Page -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/dist/img/icon.png') }}" />
+    <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/home.css') }}">
+    <!-- Animation CSS -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/hover-min.css') }}">
 </head>
 
 <body id="top">
+    <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg bg-primary bg-gradient">
         <div class="container-fluid">
-            <a class="navbar-brand ps-2" href="">
+            <a class="navbar-brand ps-2" href="/">
                 <img src="{{ asset('assets/dist/img/icon.png') }}" alt="Logo" width="52"
                     class="d-inline-block align-text-center rounded-3">
                 <span class="text-light fw-bold ps-2 ">Shape<span class="text-warning fst-italic">Count</span></span>
@@ -29,7 +36,8 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mx-4">
-                            <a class="nav-link text-light fw-bolder hvr-grow" aria-current="page" href="#top">Home</a>
+                            <a class="nav-link text-light fw-bolder hvr-grow" aria-current="page"
+                                href="#top">Home</a>
                         </li>
                         <li class="nav-item mx-5">
                             <a class="nav-link text-light fw-bolder hvr-grow" href="#team">Team</a>
@@ -42,7 +50,11 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid" id="main-one" style="background-image: url('{{ asset('assets/dist/img/body.svg')}}');" >
+    <!-- Tutup Navbar -->
+
+    <!-- Header-->
+    <div class="container-fluid" id="main-one"
+        style="background-image: url('{{ asset('assets/dist/img/body.svg') }}');">
         <div class="row">
             <div class="col-md-6 p-5">
                 <div class="title-center">
@@ -53,14 +65,15 @@
                     <span class="fs-6">Penghitung Luas dari Bangun Datar dan Bangun Ruang, Mudah dan Cepat untuk
                         digunakan dijamin Pekerjaan Rumah Anda Cepat Selesai.</span>
                     <br>
-                    <button type="button" class="btn btn-primary btn-lg mt-3 hvr-forward">Get Started &nbsp;<i class="bi bi-arrow-right"></i></button>
+                    <button type="button" class="btn btn-primary btn-lg mt-3 hvr-forward">Get Started &nbsp;<i
+                            class="bi bi-arrow-right"></i></button>
                 </div>
             </div>
             <div class="col-md-6 sidebar">
                 <div class="center-box">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="" class="text-decoration-none">
+                            <a href="{{ route('bangun-datar') }}" class="text-decoration-none">
                                 <div class="kotak1 bg-gradient hvr-float-shadow">
                                     <div class="text-center text-white fs-3 font-monospace">
                                         Bangun Datar
@@ -71,7 +84,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="" class="text-decoration-none">
+                            <a href="{{ route('bangun-ruang') }}" class="text-decoration-none">
                                 <div class="kotak2 bg-danger bg-gradient hvr-float-shadow">
                                     <p class="text-center text-light fs-3 font-monospace">
                                         Bangun Ruang
@@ -84,7 +97,11 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid our-team" style="background-image: url('{{ asset('assets/dist/img/body1.svg')}}');" id="team">
+    <!-- Tutup Header -->
+
+    <!-- Section-Team -->
+    <div class="container-fluid our-team" style="background-image: url('{{ asset('assets/dist/img/body1.svg') }}');"
+        id="team">
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center pb-5">
@@ -96,28 +113,31 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="d-flex">
-                                        <div class="card container bg-dark bg-gradient fatih" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient fatih"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/fatih.png') }}" class="card-img-top"
+                                                alt="fatih.png" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>Muhammad Fatih</b></h4>
                                                 <p class="card-text"></p>
                                             </div>
                                         </div>
-                                        <div class="card container bg-dark bg-gradient jay" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient jay"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/jay.png') }}" class="card-img-top"
+                                                alt="jay.png" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>Muchamad Zainuri</b></h4>
                                                 <p class="card-text"></p>
                                             </div>
                                         </div>
-                                        <div class="card container bg-dark bg-gradient nisa" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient nisa"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/nisa.png') }}" class="card-img-top"
+                                                alt="nisa.png" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>Nuranisah</b></h4>
                                                 <p class="card-text"></p>
@@ -127,28 +147,31 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="d-flex">
-                                        <div class="card container bg-dark bg-gradient hudan" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient hudan"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/hudan.png') }}" class="card-img-top"
+                                                alt="hudan.png" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>Aa D.A Hudan A.N</b></h4>
                                                 <p class="card-text"></p>
                                             </div>
                                         </div>
-                                        <div class="card container bg-dark bg-gradient tasya" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient tasya"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/tasya.jpg') }}" class="card-img-top"
+                                                alt="tasya.jpg" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>Aulya Natasya</b></h4>
                                                 <p class="card-text"></p>
                                             </div>
                                         </div>
-                                        <div class="card container bg-dark bg-gradient abrar" style="width: 18rem; border-radius:20px">
+                                        <div class="card container bg-dark bg-gradient abrar"
+                                            style="width: 18rem; border-radius:20px">
                                             <br>
-                                            <img src="{{ asset('assets/dist/img/logo.png') }}" class="card-img-top"
-                                                alt="..." style="border-radius:5px ;">
+                                            <img src="{{ asset('assets/dist/img/abrar.png') }}" class="card-img-top"
+                                                alt="abrar.png" style="border-radius:5px ;">
                                             <div class="card-body">
                                                 <h4 class="card-title text-white"><b>M Abrar Al Arkan</b></h4>
                                                 <p class="card-text"></p>
@@ -173,7 +196,10 @@
             </div>
         </div>
     </div>
-    <footer class="contact" style="background-image: url('{{ asset('assets/dist/img/body2.svg')}}');">
+    <!-- Tutup Section-Team -->
+
+    <!-- Footer -->
+    <footer class="contact" style="background-image: url('{{ asset('assets/dist/img/body2.svg') }}');">
         <div class="container-fluid">
             <br>
             <br>
@@ -212,9 +238,9 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-center">
                     <div class="text-white">
-                    <div class="fs-5 p-3 bg-dark bg-dark rounded-circle">
-                        <i class="bi bi-envelope-fill"></i>
-                    </div>
+                        <div class="fs-5 p-3 bg-dark bg-dark rounded-circle">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
                     </div>
                     <div class="ps-3">
                         <div class="fw-bold fs-5">Email</div>
@@ -253,7 +279,8 @@
                 <br>
                 <div class="form-group row">
                     <div class="offset-5 col-6">
-                        <button name="submit" type="submit" class="btn btn-warning btn-lg text-light hvr-grow">Kirim Pesan</button>
+                        <button name="submit" type="submit"
+                            class="btn btn-warning btn-lg text-light hvr-grow">Kirim Pesan</button>
                     </div>
                 </div>
             </form>
@@ -278,6 +305,9 @@
             </div>
         </div>
     </footer>
+    <!-- Tutup Footer -->
+
+    <!-- Bootstrap core JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>

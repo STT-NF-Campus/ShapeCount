@@ -4,61 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RuangController extends Controller
+interface RuangController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('ruang');
-    }
+    public function showPage();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    public function hitungLuas(Request $request);
 }
+
+// class Balok extends RuangController
+// {
+//     /**
+//      * Display a listing of the resource.
+//      */
+//     public function index()
+//     {
+//         return view('form_balok');
+//     }
+
+//     public function store(Request $request)
+//     {
+//         $data = $request->validate([
+//             'panjang' => 'required|numeric',
+//             'lebar' => 'required|numeric',
+//             'tinggi' => 'required|numeric'
+//         ]);
+
+//         $data['luas'] = 2 * ($data['panjang'] * $data['lebar'] + $data['panjang'] * $data['tinggi'] + $data['lebar'] * $data['tinggi']);
+//         $data['volume'] = $data['panjang'] * $data['lebar'] * $data['tinggi'];
+
+//         return view('form_balok', compact('data'));
+//     }
+// }
