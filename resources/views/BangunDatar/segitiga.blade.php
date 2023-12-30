@@ -67,13 +67,13 @@
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control border-1 border-dark fs-5" id="alas"
-                                    @if (isset($alas)) value="{{ $alas }}" @endif name="alas"
+                                    @if (isset($data['alas'])) value="{{ $data['alas'] }}" @endif name="alas"
                                     placeholder="Alas" required>
                                 <label for="alas">Alas</label>
                             </div>
                             <div class="form-floating pb-5">
                                 <input type="number" class="form-control border-1 border-dark fs-5" id="tinggi"
-                                    @if (isset($tinggi)) value="{{ $tinggi }}" @endif name="tinggi"
+                                    @if (isset($data['tinggi'])) value="{{ $data['tinggi'] }}" @endif name="tinggi"
                                     placeholder="Tinggi" required>
                                 <label for="tinggi">Tinggi</label>
                             </div>
@@ -103,7 +103,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($alas) && isset($tinggi) && isset($luas))
+        @if (isset($data['alas']) && isset($data['tinggi']) && isset($data['luas']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -128,11 +128,11 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Alas</td>
-                                        <td><?= $alas ?> cm</td>
+                                        <td><?= $data['alas'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Tinggi</td>
-                                        <td><?= $tinggi ?> cm</td>
+                                        <td><?= $data['tinggi'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -140,7 +140,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

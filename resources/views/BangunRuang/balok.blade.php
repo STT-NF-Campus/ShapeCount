@@ -65,19 +65,19 @@
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control border-1 border-dark" id="panjang"
-                                    @if (isset($panjang)) value="{{ $panjang }}" @endif name="panjang"
+                                    @if (isset($data['panjang'])) value="{{ $data['panjang'] }}" @endif name="panjang"
                                     placeholder="Panjang" required>
                                 <label for="panjang">Panjang</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control border-1 border-dark" id="lebar"
-                                    @if (isset($lebar)) value="{{ $lebar }}" @endif name="lebar"
+                                    @if (isset($data['lebar'])) value="{{ $data['lebar'] }}" @endif name="lebar"
                                     placeholder="Lebar" required>
                                 <label for="Lebar">Lebar</label>
                             </div>
                             <div class="form-floating pb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="tinggi"
-                                    @if (isset($tinggi)) value="{{ $tinggi }}" @endif name="tinggi"
+                                    @if (isset($data['tinggi'])) value="{{ $data['tinggi'] }}" @endif name="tinggi"
                                     placeholder="Tinggi" required>
                                 <label for="tinggi">Tinggi</label>
                             </div>
@@ -107,7 +107,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($panjang) && isset($lebar) && isset($tinggi) && isset($luas))
+        @if (isset($data['panjang']) && isset($data['lebar']) && isset($data['tinggi']) && isset($data['luas']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -132,15 +132,15 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Panjang</td>
-                                        <td><?= $panjang ?> cm</td>
+                                        <td><?= $data['panjang'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Lebar</td>
-                                        <td><?= $lebar ?> cm</td>
+                                        <td><?= $data['lebar'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Tinggi</td>
-                                        <td><?= $tinggi ?> cm</td>
+                                        <td><?= $data['tinggi'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -148,7 +148,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

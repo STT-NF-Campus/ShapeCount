@@ -2,18 +2,34 @@
 
 namespace App\Http\Controllers\BangunRuang;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\RuangController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-
-class KubusController extends Controller implements RuangController
+/**
+ *  Class KubusController untuk menghitung luas kubus dan mengembalikan view
+ * @implements ShapesController
+ */
+class KubusController implements ShapesController
 {
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunRuang.kubus');
     }
 
+    /**
+     * Method untuk Menghitung luas kubus
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Aray $data hasil perhitungan
+     */
     public function hitungLuas(Request $request)
     {
         $sisi = $request->input('sisi');
@@ -23,6 +39,6 @@ class KubusController extends Controller implements RuangController
             'sisi' => $sisi,
             'luas' => $luas,
         ];
-        return view('BangunRuang.kubus', $data);
+        return $data;
     }
 }

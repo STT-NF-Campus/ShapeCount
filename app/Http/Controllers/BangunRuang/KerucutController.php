@@ -2,17 +2,36 @@
 
 namespace App\Http\Controllers\BangunRuang;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\RuangController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-class KerucutController extends Controller implements RuangController
+
+/**
+ *  Class KerucutController untuk menghitung luas kerucut dan mengembalikan view
+ * @implements ShapesController
+ */
+class KerucutController implements ShapesController
 {
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunRuang.kerucut');
     }
 
+
+    /**
+     * Method untuk Menghitung luas kerucut
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Aray $data hasil perhitungan
+     */
     public function hitungLuas(Request $request){
         $jari = $request->input('jarijari');
         $sisi = $request->input('sisi');
@@ -25,6 +44,6 @@ class KerucutController extends Controller implements RuangController
             'luas' => $luas,
         ];
 
-        return view('BangunRuang.kerucut',$data);
+        return $data;
     }
 }

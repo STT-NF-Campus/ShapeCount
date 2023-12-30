@@ -222,7 +222,7 @@
                     </div>
                     <div class="ps-3">
                         <div class="fw-bold fs-5">Call Us</div>
-                        <div class="">+62 813 8180 5291</div>
+                        <div class="">+62 813 8180 5293</div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center">

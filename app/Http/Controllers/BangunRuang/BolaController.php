@@ -2,17 +2,37 @@
 
 namespace App\Http\Controllers\BangunRuang;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\RuangController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-class BolaController extends Controller implements RuangController
+
+/**
+ *  Class BolaController untuk menghitung luas bola dan mengembalikan view
+ * @implements ShapesController
+ */
+class BolaController implements ShapesController
 {
+
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunRuang.bola');
     }
 
+
+    /**
+     * Method untuk Menghitung luas bola
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Aray $data hasil perhitungan
+     */
     public function hitungLuas(Request $request)
     {
         $jarijari = $request->input('jarijari');
@@ -26,6 +46,6 @@ class BolaController extends Controller implements RuangController
             'luas' => $luas,
         ];
 
-        return view('BangunRuang.bola', $data);
+        return $data;
     }
 }

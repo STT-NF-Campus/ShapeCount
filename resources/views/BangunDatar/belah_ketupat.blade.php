@@ -66,16 +66,16 @@
                         <form method="POST" action="{{ route('belahketupat.hitungLuas') }}#hasil">
                             @csrf
                             <div class="form-floating mb-5">
-                                <input type="number" class="form-control border-1 border-dark fs-5" id="d_ac"
-                                    @if (isset($ci)) value="{{ $ci }}" @endif name="d_ci"
-                                    placeholder="Diagonal CI" required>
-                                <label for="d_ci">Diagonal CI</label>
+                                <input type="number" class="form-control border-1 border-dark fs-5" id="d1"
+                                    @if (isset($data['d1'])) value="<?= $data['d1'] ?>" @endif name="d1"
+                                    placeholder="Diagonal 1" required>
+                                <label for="d1">Diagonal 1</label>
                             </div>
                             <div class="form-floating mb-5">
-                                <input type="number" class="form-control border-1 border-dark fs-5" id="d_di"
-                                    @if (isset($di)) value="{{ $di }}" @endif name="d_di"
-                                    placeholder="Diagonal DI" required>
-                                <label for="d_di">Diagonal DI</label>
+                                <input type="number" class="form-control border-1 border-dark fs-5" id="d2"
+                                    @if (isset($data['d2'])) value="<?= $data['d2'] ?>" @endif name="d2"
+                                    placeholder="Diagonal 2" required>
+                                <label for="d2">Diagonal 2</label>
                             </div>
                             <div class="form-group row">
                                 <div class="offset-4">
@@ -103,7 +103,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($ci) && isset($di) && isset($d1) && isset($d2) && isset($luas))
+        @if (isset($data['d1']) && isset($data['d2']) && isset($data['luas']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -127,28 +127,20 @@
                                 </thead>
                                 <tbody class="text-center">
                                     <tr>
-                                        <td>Diagonal CI</td>
-                                        <td><?= $ci ?> cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Diagonal DI</td>
-                                        <td><?= $di ?> cm</td>
-                                    </tr>
-                                    <tr>
                                         <td>Diagonal 1</td>
-                                        <td><?= $d1 ?> cm</td>
+                                        <td><?= $data['d1'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Diagonal 2</td>
-                                        <td><?= $d2 ?> cm</td>
+                                        <td><?= $data['d2'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
-                                        <td class="text-start">d1 = 2 x CI <br>d2 = 2 x DI <br>L = 1/2 x d1 x d2</td>
+                                        <td>1/2 x d1 x d2</td>
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

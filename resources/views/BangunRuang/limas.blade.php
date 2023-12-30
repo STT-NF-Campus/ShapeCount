@@ -66,13 +66,13 @@
                             @csrf
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="salas"
-                                    @if (isset($salas)) value="{{ $salas }}" @endif name="salas"
+                                    @if (isset($data['salas'])) value="{{ $data['salas'] }}" @endif name="salas"
                                     placeholder="Sisi Alas" required>
                                 <label for="salas">Sisi Alas</label>
                             </div>
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="tinggist"
-                                    @if (@isset($tinggist)) value="{{ $tinggist }}" @endif name="tinggist"
+                                    @if (isset($data['tinggist'])) value="{{ $data['tinggist'] }}" @endif name="tinggist"
                                     placeholder="Tinggi Sisi Tegak" required>
                                 <label for="tinggist">Tinggi Sisi Tegak</label>
                             </div>
@@ -102,7 +102,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($luas) && isset($salas) && isset($tinggist))
+        @if (isset($data['luas']) && isset($data['salas']) && isset($data['tinggist']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -127,11 +127,11 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Sisi Alas</td>
-                                        <td><?= $salas ?> cm</td>
+                                        <td><?= $data['salas'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Tinggi Sisi Tegak</td>
-                                        <td><?= $tinggist ?> cm</td>
+                                        <td><?= $data['tinggist'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -139,7 +139,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

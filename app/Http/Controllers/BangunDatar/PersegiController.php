@@ -2,23 +2,42 @@
 
 namespace App\Http\Controllers\BangunDatar;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\DatarController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-class PersegiController extends Controller implements DatarController
+
+/**
+ * Class PersegiController berfungsi untuk menghitung luas persegi dan mengembalikan view
+ * @implements ShapesController
+ */
+class PersegiController implements ShapesController
 {
 
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunDatar.persegi');
     }
 
+
+    /**
+     * Method untuk Menghitung luas persegi
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Array $data value hasil perhitungan
+     */
     public function hitungLuas(Request $request)
     {
-        
-        $this->validate($request, [
-            'sisi' => 'required|numeric'
+
+        $request->validate([
+            'sisi' => 'required|numeric',
         ]);
 
         $sisi = $request->input('sisi');
@@ -29,6 +48,6 @@ class PersegiController extends Controller implements DatarController
             'luas' => $luas,
         ];
 
-        return view('BangunDatar.persegi', $data);
+        return $data;
     }
 }

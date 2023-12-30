@@ -69,7 +69,7 @@
                             @csrf
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="sisi"
-                                    @if (isset($sisi)) value="{{ $sisi }}" @endif name="sisi"
+                                    @if (isset($data['sisi'])) value="{{ $data['sisi'] }}" @endif name="sisi"
                                     placeholder="sisi" required>
                                 <label for="sisi">sisi</label>
                             </div>
@@ -99,7 +99,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($luas) && isset($sisi))
+        @if (isset($data['luas']) && isset($data['sisi']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -124,7 +124,7 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Sisi</td>
-                                        <td><?= $sisi ?> cm</td>
+                                        <td><?= $data['sisi'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -132,7 +132,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

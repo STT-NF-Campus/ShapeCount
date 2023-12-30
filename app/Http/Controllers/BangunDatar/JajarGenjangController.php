@@ -2,17 +2,37 @@
 
 namespace App\Http\Controllers\BangunDatar;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\DatarController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-class JajarGenjangController extends Controller implements DatarController
+
+/**
+ * Class JajarGenjangController digunakan untuk menghitung luas jajar genjang dan mengembalikan view
+ * @implements ShapesController
+ */
+class JajarGenjangController implements ShapesController
 {
+
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunDatar.jajar_genjang');
     }
 
+
+    /**
+     * Method untuk Menghitung luas jajar genjang
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Array $data value hasil perhitungan
+     */
     public function hitungLuas(Request $request)
     {
         $alas = $request->input('alas');
@@ -26,7 +46,7 @@ class JajarGenjangController extends Controller implements DatarController
             'luas' => $luas,
         ];
 
-        return view('BangunDatar.jajar_genjang', $data);
+        return $data;
     }
 
 }

@@ -31,16 +31,19 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mx-4">
-                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{route('bangun-datar')}}">Bangun Datar</a>
+                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{ route('bangun-datar') }}">Bangun
+                                Datar</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{route('bangun-ruang')}}">Bangun Ruang</a>
+                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{ route('bangun-ruang') }}">Bangun
+                                Ruang</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{url('/')}}#team">Team</a>
+                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{ url('/') }}#team">Team</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link text-light fw-bolder hvr-grow" href="{{url('/')}}#contact">Contact</a>
+                            <a class="nav-link text-light fw-bolder hvr-grow"
+                                href="{{ url('/') }}#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +71,7 @@
                             @csrf
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark fs-5" id="sisi"
-                                    @if (isset($sisi)) value="{{ $sisi }}" @endif name="sisi"
+                                    @if (isset($data['sisi'])) value="<?= $data['sisi'] ?>" @endif name="sisi"
                                     placeholder="Sisi" required>
                                 <label for="sisi">Sisi</label>
                             </div>
@@ -88,7 +91,8 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
                         <div class="card border-2 border-dark shadow bg-warning" style="width: 25rem">
-                            <img src="{{ asset('assets/dist/img/BangunDatar/Persegi.png') }}" alt="shape.png" class="p-4 rounded-5 ">
+                            <img src="{{ asset('assets/dist/img/BangunDatar/Persegi.png') }}" alt="shape.png"
+                                class="p-4 rounded-5 ">
                         </div>
                     </div>
                     <div class="col-md-1"></div>
@@ -98,7 +102,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($sisi) && isset($luas))
+        @if (isset($data['sisi']) && isset($data['luas']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -123,7 +127,7 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Sisi</td>
-                                        <td><?= $sisi ?> cm</td>
+                                        <td><?= $data['sisi'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -131,7 +135,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>

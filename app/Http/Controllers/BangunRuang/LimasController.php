@@ -2,17 +2,35 @@
 
 namespace App\Http\Controllers\BangunRuang;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\RuangController;
+// import class ShapesController
+use App\Http\Controllers\ShapesController;
+
+// import class Request
 use Illuminate\Http\Request;
 
-class LimasController extends Controller implements RuangController
+
+/**
+ *  Class LimasController untuk menghitung luas limas dan mengembalikan view
+ * @implements ShapesController
+ */
+class LimasController implements ShapesController
 {
+    /**
+     * Method untuk Menampilkan view
+     * @override method showPage() dari interface ShapesController
+     * @return view
+     */
     public function showPage()
     {
         return view('BangunRuang.limas');
     }
 
+    /**
+     * Method untuk Menghitung luas limas
+     * @override method hitungLuas() dari interface ShapesController
+     * @param Request $request
+     * @return Aray $data hasil perhitungan
+     */
     public function hitungLuas(Request $request)
     {
         $salas = $request->input('salas');
@@ -23,6 +41,6 @@ class LimasController extends Controller implements RuangController
             'tinggist' => $tinggist,
             'luas' => $luas,
         ];
-        return view('BangunRuang.limas', $data );
+        return $data;
     }
 }

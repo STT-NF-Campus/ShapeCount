@@ -68,7 +68,7 @@
                             @csrf
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark fs-5" id="jari"
-                                    @if (isset($jari)) value="{{ $jari }}" @endif name="jari"
+                                    @if (isset($data['jari'])) value="{{ $data['jari'] }}" @endif name="jari"
                                     placeholder="Jari-Jari" required>
                                 <label for="jari">Jari-Jari</label>
                             </div>
@@ -98,7 +98,7 @@
         <br>
 
         <!-- cek apakah inputan kosong atau tidak -->
-        @if (isset($jari) && isset($luas) && isset($fi))
+        @if (isset($data['jari']) && isset($data['luas']) && isset($data['fi']))
             <!-- Hasil Output -->
             <div class="row pt-3 pb-4" id="hasil">
                 <div class="col-md-3"></div>
@@ -123,11 +123,11 @@
                                 <tbody class="text-center">
                                     <tr>
                                         <td>Jari-Jari</td>
-                                        <td><?= $jari ?> cm</td>
+                                        <td><?= $data['jari'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>π</td>
-                                        <td><?= $fi ?> cm</td>
+                                        <td><?= $data['fi'] ?> cm</td>
                                     </tr>
                                     <tr>
                                         <td>Rumus</td>
@@ -135,7 +135,7 @@
                                     </tr>
                                     <tr class="table-success border-2 border-success">
                                         <td>Luas</td>
-                                        <td><?= $luas ?> cm<sup>2</sup></td>
+                                        <td><?= $data['luas'] ?> cm<sup>2</sup></td>
                                     </tr>
                                 </tbody>
                             </table>
