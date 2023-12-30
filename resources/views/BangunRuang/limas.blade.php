@@ -67,8 +67,8 @@
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="salas"
                                     @if (isset($data['salas'])) value="{{ $data['salas'] }}" @endif name="salas"
-                                    placeholder="Sisi Alas" required>
-                                <label for="salas">Sisi Alas</label>
+                                    placeholder="Panjang Alas" required>
+                                <label for="salas">Panjang Alas</label>
                             </div>
                             <div class="form-floating mb-5">
                                 <input type="number" class="form-control border-1 border-dark" id="tinggist"
